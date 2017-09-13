@@ -35,7 +35,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param <T>             泛型模板
      */
     public <T> void requestAsyncGet(String url, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncGetEnqueue(url, iTRequestResult, clazz, params);
+       // OkHttpUtil.getInstance().requestAsyncGetEnqueue(url, iTRequestResult, clazz, params);
     }
 
     /**
@@ -49,7 +49,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param <T>             泛型模板
      */
     public <T> void requestAsyncGetByTag(String url, String activityName, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncGetEnqueueByTag(url, activityName, iTRequestResult, clazz, params);
+      //  OkHttpUtil.getInstance().requestAsyncGetEnqueueByTag(url, activityName, iTRequestResult, clazz, params);
     }
 
     /**
@@ -62,7 +62,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param <T>             泛型模板
      */
     public <T> void requestAsyncPost(String url, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPost(url, iTRequestResult, clazz, params);
+      //  OkHttpUtil.getInstance().requestAsyncPost(url, iTRequestResult, clazz, params);
     }
 
     /**
@@ -76,7 +76,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param <T>             泛型模板
      */
     public <T> void requestAsyncPostByTag(String url, String activityName, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, iTRequestResult, clazz, params);
+     //   OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, iTRequestResult, clazz, params);
     }
 
 
@@ -90,7 +90,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param <T>             泛型模板
      */
     public <T> void requestAsyncDelete(String url, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncDelete(url, iTRequestResult, clazz, params);
+      //  OkHttpUtil.getInstance().requestAsyncDelete(url, iTRequestResult, clazz, params);
     }
 
     /**
@@ -104,7 +104,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param params          请求参数
      */
     public <T> void requestAsyncPost(String url, File file, String key, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPost(url, file, key, iTRequestResult, clazz, params);
+      //  OkHttpUtil.getInstance().requestAsyncPost(url, file, key, iTRequestResult, clazz, params);
     }
 
     /**
@@ -119,7 +119,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param params          请求参数
      */
     public <T> void requestAsyncPostByTag(String url, String activityName, File file, String key, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, file, key, iTRequestResult, clazz, params);
+     //   OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, file, key, iTRequestResult, clazz, params);
     }
 
     /**
@@ -133,7 +133,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param params          请求参数
      */
     public <T> void requestAsyncPost(String url, File[] files, String[] keys, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPost(url, files, keys, iTRequestResult, clazz, params);
+      //  OkHttpUtil.getInstance().requestAsyncPost(url, files, keys, iTRequestResult, clazz, params);
     }
 
     /**
@@ -148,7 +148,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param params          请求参数
      */
     public <T> void requestAsyncPostByTag(String url, String activityName, File[] files, String[] keys, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, files, keys, iTRequestResult, clazz, params);
+      //  OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, files, keys, iTRequestResult, clazz, params);
     }
 
     /**
@@ -163,7 +163,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param params          请求参数
      */
     public <T> void requestAsyncPost(String url, byte[] files, String fileName, String key, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPost(url, files, fileName, key, iTRequestResult, clazz, params);
+     //   OkHttpUtil.getInstance().requestAsyncPost(url, files, fileName, key, iTRequestResult, clazz, params);
     }
 
     /**
@@ -179,7 +179,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param params          请求参数
      */
     public <T> void requestAsyncPostByTag(String url, String activityName, byte[] files, String fileName, String key, ITRequestResult<T> iTRequestResult, Class<T> clazz, Param... params) {
-        OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, files, fileName, key, iTRequestResult, clazz, params);
+      //  OkHttpUtil.getInstance().requestAsyncPostByTag(url, activityName, files, fileName, key, iTRequestResult, clazz, params);
     }
 
     /**
@@ -188,7 +188,7 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param url
      */
     public void cancelRequest(String url) {
-        OkHttpUtil.getInstance().cancelRequest(url);
+      //  OkHttpUtil.getInstance().cancelRequest(url);
     }
 
     /**
@@ -197,11 +197,11 @@ public class OkHttpManager implements BridgeLifeCycleListener {
      * @param activity
      */
     public void cancelActivityRequest(String activity) {
-        OkHttpUtil.getInstance().cancelActivityRequest(activity);
+       // OkHttpUtil.getInstance().cancelActivityRequest(activity);
     }
 
     @Override
     public void clearOnApplicationQuit() {
-        OkHttpUtil.getInstance().destory();
+        //OkHttpUtil.getInstance().destory();
     }
 }

@@ -32,6 +32,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void initViews() {
+        showBackButton(this);
         back = (Button) findViewById(R.id.back);
         image = (ImageButton) findViewById(R.id.image);
     }

@@ -2,9 +2,16 @@ package com.example.huan.commonandroid.ui.base;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.view.ViewCompat;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -37,7 +44,7 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
     /**
      * 返回按钮
      */
-    private LinearLayout back;
+    private ImageView back;
 
     /**
      * 标题，右边字符
@@ -51,6 +58,23 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            View decorView = getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            decorView.setSystemUiVisibility(option);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+
+            boolean useThemestatusBarColor = false;//是否使用特殊的标题栏背景颜色，android5.0以上可以设置状态栏背景色，如果不使用则使用透明色值
+            //根据上面设置是否对状态栏单独设置颜色
+            if (useThemestatusBarColor) {
+                getWindow().setStatusBarColor(getResources().getColor(R.color.green));
+            } else {
+                getWindow().setStatusBarColor(Color.TRANSPARENT);
+            }
+        }
+
         presentationLayerFuncHelper = new PresentationLayerFuncHelper(this);
 
         initViews();
@@ -63,16 +87,30 @@ public abstract class BaseActivity extends Activity implements CreateInit, Publi
 
     @Override
     public void setHeader() {
-        back = (LinearLayout) findViewById(R.id.ll_back);
-        title = (TextView) findViewById(R.id.tv_title);
-        right = (TextView) findViewById(R.id.tv_right);
+        back = (ImageView) findViewById(R.id.common_title_back);
+        title = (TextView) findViewById(R.id.common_title);
+        right = (TextView) findViewById(R.id.common_title_right);
         back.setOnClickListener(this);
+    }
+    /**
+     * 显示返回按钮
+     * @param activity
+     */
+    protected void showBackButton(final Activity activity) {
+        ImageView backimg = (ImageView) findViewById(R.id.common_title_back);
+        backimg.setVisibility(View.VISIBLE);
+        backimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.finish();
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ll_back:
+            case R.id.common_title_back:
                 finish();
                 break;
         }

@@ -35,7 +35,7 @@ public class LoginActivity extends BaseActivity implements IUserLoginView {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
 
-        presenter = mUserLoginPresenter = new LoginPresenter();
+        presenter = mUserLoginPresenter = new LoginPresenter(this);
         mUserLoginPresenter.attachView(this);
     }
 
